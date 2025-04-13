@@ -1,0 +1,43 @@
+/* The attributes within this are used when the page is printed. */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  /* It display only the printable section */
+  #printable, #printable * {
+    visibility: visible;
+    display: block !important;
+  }
+
+   /* Attributes for printable */
+  #printable {
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+  }
+
+  /* Remove bottom spacing from the last heading */
+  #printable h2:last-child {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* Make hidden components appear in print */
+  .hidden {
+    display: block !important;
+  }
+
+  /* Attributes for print button */
+  button {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    color: white !important;
+    background-color: #22c55e !important;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    display: inline-block;
+  }
+}
